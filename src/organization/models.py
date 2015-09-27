@@ -9,7 +9,7 @@ class Organization(models.Model):
     
     description = models.TextField(blank=True)
 
-    image = models.ImageField()
+    image = models.ImageField(blank=True)
 
     build = models.DateField(blank=True, null=True)
     cease = models.DateField(blank=True, null=True)
