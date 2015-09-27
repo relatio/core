@@ -1,0 +1,42 @@
+# System
+.AppleDouble
+.DS_Store
+.LSOverride
+
+# Byte-compiled # optimized # DLL files # Environment
+__pycache__/
+*.py[cod]
+*$py.class
+[v]env/
+node_modules/
+
+# Generated files # Translations # Keys
+.vagrant/
+*.log
+.idea
+*.box
+*.patch
+*.pyc
+*.sql
+*.mo
+*.pot
+*.pem
+
+
+# Unit test # coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage/
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+pylint.report
+
+# Sphinx documentation
+docs/_build/
+
+# Project Specific Stuff
+deploy/env/
