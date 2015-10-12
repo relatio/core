@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'flat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,9 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_hstore',
+
     'person',
     'entity',
     'organization',
+    'cross_relations',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,6 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'relatio',
+        'USER': 'relatio',
         'PASSWORD': 'R3laT!0',
         'HOST': 'localhost',
     }
