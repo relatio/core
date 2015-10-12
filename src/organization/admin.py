@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . import models
+from . import models, forms
 
 
 @admin.register(models.Organization)
@@ -15,7 +15,8 @@ class OrganizationKindAdmin(admin.ModelAdmin):
 
 @admin.register(models.OrganizationalRelation)
 class OrganizationalRelationAdmin(admin.ModelAdmin):
-    pass
+    fields = (('organization', 'kind', 'relation'),)
+    form = forms.OrganizationRelationModelForm
 
 
 @admin.register(models.OrganizationalRelationKind)

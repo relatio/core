@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'django_select2/css/all-bootstrapped.min.css' %}">
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="{% static 'django_select2/js/select2.min.js' %}"></script>
+<script src="{% static 'django_select2/js/heavy_data.min.js' %}"></script>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

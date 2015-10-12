@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . import models
+from . import models, forms
 
 
 @admin.register(models.Person)
@@ -10,7 +10,8 @@ class PersonAdmin(admin.ModelAdmin):
 
 @admin.register(models.PersonalRelation)
 class PersonalRelationAdmin(admin.ModelAdmin):
-    pass
+    fields = (('person', 'kind', 'relation'),)
+    form = forms.PersonalRelationModelForm
 
 
 @admin.register(models.PersonalRelationKind)

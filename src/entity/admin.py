@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . import models
+from . import models, forms
 
 
 @admin.register(models.Entity)
@@ -15,7 +15,8 @@ class EntityKindAdmin(admin.ModelAdmin):
 
 @admin.register(models.EntityRelation)
 class EntityRelationAdmin(admin.ModelAdmin):
-    pass
+    fields = (('entity', 'kind', 'relation'),)
+    form = forms.EntityRelationModelForm
 
 
 @admin.register(models.EntityRelationKind)

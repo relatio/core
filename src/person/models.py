@@ -10,7 +10,7 @@ class Person(models.Model):
 
     public_name = models.CharField(max_length=510, blank=True)
 
-    position = models.CharField(max_length=255)
+    position = models.CharField(max_length=255, blank=True)
 
     description = models.TextField(blank=True)
 

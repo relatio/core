@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^select2/', include('django_select2.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
 admin.site.site_header = 'Relatio'
