@@ -14,6 +14,8 @@ class Organization(models.Model):
 
     description = models.TextField(blank=True)
 
+    kind = models.ForeignKey(OrganizationKind, null=True, blank=True)
+
     image = models.ImageField(blank=True)
 
     build = models.DateField(blank=True, null=True)
@@ -27,7 +29,7 @@ class Organization(models.Model):
         through='OrganizationalRelation',
         related_name='organizational_relations')
 
-    def __src__(self):
+    def __str__(self):
         return self.public_name
 
 
@@ -41,3 +43,6 @@ class OrganizationalRelation(models.Model):
     kind = models.ForeignKey(OrganizationalRelationKind)
 
     metadata = hstore.DictionaryField(blank=True)
+
+    def __str__(self):
+        return '{} : {} : {}'.format(self.organization, self.kind, self.relation)

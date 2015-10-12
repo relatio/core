@@ -14,7 +14,7 @@ class Entity(models.Model):
     official_name = models.CharField(max_length=255, blank=True)
     official_id = models.CharField(max_length=255, blank=True)
 
-    kind = models.CharField(max_length=255)
+    kind = models.ForeignKey(EntityKind, null=True, blank=True)
 
     description = models.TextField(blank=True)
 
@@ -36,8 +36,8 @@ class Entity(models.Model):
         through='cross_relations.EntityOrganizationRelation',
         related_name='entity_organization_relations')
 
-    def __src__(self):
-        return self.offcial_name if self.offcial_name != '' else self.public_name
+    def __str__(self):
+        return self.public_name if self.public_name != '' else self.official_name
 
 
 class EntityRelationKind(DirectedRelationKind):
@@ -50,3 +50,6 @@ class EntityRelation(models.Model):
     kind = models.ForeignKey(EntityRelationKind)
 
     metadata = hstore.DictionaryField(blank=True)
+
+    def __str__(self):
+        return '{} : {} : {}'.format(self.entity, self.kind, self.relation)

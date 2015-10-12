@@ -18,6 +18,9 @@ class PersonEntityRelation(models.Model):
 
     metadata = hstore.DictionaryField(blank=True)
 
+    def __str__(self):
+        return '{} : {} : {}'.format(self.person, self.kind, self.entity)
+
 
 class PersonOrganizationRelationKind(DirectedRelationKind):
     pass
@@ -30,6 +33,9 @@ class PersonOrganizationRelation(models.Model):
 
     metadata = hstore.DictionaryField(blank=True)
 
+    def __str__(self):
+        return '{} : {} : {}'.format(self.person, self.kind, self.organization)
+
 
 class EntityOrganizationRelationKind(DirectedRelationKind):
     pass
@@ -41,3 +47,6 @@ class EntityOrganizationRelation(models.Model):
     kind = models.ForeignKey(EntityOrganizationRelationKind)
 
     metadata = hstore.DictionaryField(blank=True)
+
+    def __str__(self):
+        return '{} : {} : {}'.format(self.entity, self.kind, self.organization)

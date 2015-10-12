@@ -58,3 +58,6 @@ class PersonalRelation(models.Model):
     kind = models.ForeignKey(PersonalRelationKind)
 
     metadata = hstore.DictionaryField(blank=True)
+
+    def __str__(self):
+        return '{} : {} : {}'.format(self.person, self.kind, self.relation)
