@@ -13,9 +13,9 @@ class PersonEntityRelationKind(DirectedRelationKind):
 
 
 class PersonEntityRelation(models.Model):
-    person = models.ForeignKey(_('person'), Person, related_name='person_entity_person')
-    entity = models.ForeignKey(_('entity'), Entity, related_name='person_entity_entity')
-    kind = models.ForeignKey(_('kind'), PersonEntityRelationKind)
+    person = models.ForeignKey(Person, verbose_name=_('person'), related_name='person_entity_person')
+    entity = models.ForeignKey(Entity, verbose_name=_('entity'), related_name='person_entity_entity')
+    kind = models.ForeignKey(PersonEntityRelationKind, verbose_name=_('kind'))
 
     metadata = hstore.DictionaryField(blank=True)
 
@@ -31,9 +31,10 @@ class PersonOrganizationRelationKind(DirectedRelationKind):
 
 
 class PersonOrganizationRelation(models.Model):
-    person = models.ForeignKey(_('person'), Person, related_name='person_organization_person')
-    organization = models.ForeignKey(_('organization'), Organization, related_name='person_organization_organization')
-    kind = models.ForeignKey(_('kind'), PersonOrganizationRelationKind)
+    person = models.ForeignKey(Person, verbose_name=_('person'), related_name='person_organization_person')
+    organization = models.ForeignKey(Organization,
+                                     verbose_name=_('organization'), related_name='person_organization_organization')
+    kind = models.ForeignKey(PersonOrganizationRelationKind, verbose_name=_('kind'))
 
     metadata = hstore.DictionaryField(blank=True)
 
@@ -49,9 +50,10 @@ class EntityOrganizationRelationKind(DirectedRelationKind):
 
 
 class EntityOrganizationRelation(models.Model):
-    entity = models.ForeignKey(_('entity'), Entity, related_name='entity_organization_entity')
-    organization = models.ForeignKey(_('organization'), Organization, related_name='entity_organization_organization')
-    kind = models.ForeignKey(_('kind'), EntityOrganizationRelationKind)
+    entity = models.ForeignKey(Entity, verbose_name=_('entity'), related_name='entity_organization_entity')
+    organization = models.ForeignKey(Organization,
+                                     verbose_name=_('organization'), related_name='entity_organization_organization')
+    kind = models.ForeignKey(EntityOrganizationRelationKind, verbose_name=_('kind'))
 
     metadata = hstore.DictionaryField(blank=True)
 

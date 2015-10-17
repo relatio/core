@@ -17,7 +17,7 @@ class Entity(models.Model):
     official_name = models.CharField(_('official name'), max_length=255, blank=True)
     official_id = models.CharField(_('official id'), max_length=255, blank=True)
 
-    kind = models.ForeignKey(_('kind'), EntityKind, null=True, blank=True)
+    kind = models.ForeignKey(EntityKind, null=True, blank=True, verbose_name=_('kind'))
 
     description = models.TextField(_('description'), blank=True)
 
@@ -29,16 +29,16 @@ class Entity(models.Model):
     metadata = hstore.DictionaryField(_('metadata'), blank=True)
 
     entity_relation = models.ManyToManyField(
-        _('entity relation'),
         'self',
         symmetrical=False,
         through='EntityRelation',
+        verbose_name=_('entity relation'),
         related_name='entity_relations')
 
     entity_organization_relation = models.ManyToManyField(
-        _('entity organization relation'),
         'entity.Entity',
         through='cross_relations.EntityOrganizationRelation',
+        verbose_name=_('entity organization relation'),
         related_name='entity_organization_relations')
 
     class Meta:
@@ -55,9 +55,9 @@ class EntityRelationKind(DirectedRelationKind):
 
 
 class EntityRelation(models.Model):
-    entity = models.ForeignKey(_('entity'), Entity, related_name='entity_entity')
-    relation = models.ForeignKey(_('relation'), Entity, related_name='entity_related_entity')
-    kind = models.ForeignKey(_('kind'), EntityRelationKind)
+    entity = models.ForeignKey(Entity, verbose_name=_('entity'), related_name='entity_entity')
+    relation = models.ForeignKey(Entity, verbose_name=_('relation'), related_name='entity_related_entity')
+    kind = models.ForeignKey(EntityRelationKind, verbose_name=_('kind'))
 
     metadata = hstore.DictionaryField(_('metadata'), blank=True)
 

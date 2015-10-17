@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django_hstore',
     'django_select2',
 
+    'generics',
     'person',
     'entity',
     'organization',

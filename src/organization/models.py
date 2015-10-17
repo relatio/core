@@ -17,7 +17,7 @@ class Organization(models.Model):
 
     description = models.TextField(_('description'), blank=True)
 
-    kind = models.ForeignKey(_('kind'), OrganizationKind, null=True, blank=True)
+    kind = models.ForeignKey(OrganizationKind, null=True, blank=True, verbose_name=_('kind'))
 
     image = models.ImageField(_('image'), blank=True)
 
@@ -27,10 +27,10 @@ class Organization(models.Model):
     metadata = hstore.DictionaryField(_('metadata'), blank=True)
 
     organizational_relation = models.ManyToManyField(
-        _('organization relation'),
         'self',
         symmetrical=False,
         through='OrganizationalRelation',
+        verbose_name=_('organization relation'),
         related_name='organizational_relations')
 
     class Meta:
@@ -47,9 +47,11 @@ class OrganizationalRelationKind(DirectedRelationKind):
 
 
 class OrganizationalRelation(models.Model):
-    organization = models.ForeignKey(_('organization'), Organization, related_name='organization_organization')
-    relation = models.ForeignKey(_('relation'), Organization, related_name='organization_related_organization')
-    kind = models.ForeignKey(_('kind'), OrganizationalRelationKind)
+    organization = models.ForeignKey(Organization,
+                                     verbose_name=_('organization'), related_name='organization_organization')
+    relation = models.ForeignKey(Organization,
+                                 verbose_name=_('relation'), related_name='organization_related_organization')
+    kind = models.ForeignKey(OrganizationalRelationKind, verbose_name=_('kind'))
 
     metadata = hstore.DictionaryField(blank=True)
 

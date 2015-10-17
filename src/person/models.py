@@ -23,22 +23,22 @@ class Person(models.Model):
     metadata = hstore.DictionaryField(_('metadata'), blank=True)
 
     personal_relation = models.ManyToManyField(
-        _('personal relation'),
         'self',
         symmetrical=False,
         through='PersonalRelation',
+        verbose_name=_('personal relation'),
         related_name='personal_relations')
 
     person_entity_relation = models.ManyToManyField(
-        _('personal entity relation'),
         'entity.Entity',
         through='cross_relations.PersonEntityRelation',
+        verbose_name=_('personal entity relation'),
         related_name='person_entity_relations')
 
     person_organization_relation = models.ManyToManyField(
-        _('personal organization relation'),
         'organization.Organization',
         through='cross_relations.PersonOrganizationRelation',
+        verbose_name=_('personal organization relation'),
         related_name='person_organization_relations')
 
     def get_full_name(self):
@@ -62,9 +62,9 @@ class PersonalRelationKind(DirectedRelationKind):
 
 
 class PersonalRelation(models.Model):
-    person = models.ForeignKey(_('person'), Person, related_name='person_person')
-    relation = models.ForeignKey(_('relation'), Person, related_name='peson_related_person')
-    kind = models.ForeignKey(_('kind'), PersonalRelationKind)
+    person = models.ForeignKey(Person, verbose_name=_('person'), related_name='person_person')
+    relation = models.ForeignKey(Person, verbose_name=_('relation'), related_name='peson_related_person')
+    kind = models.ForeignKey(PersonalRelationKind, verbose_name=_('kind'))
 
     metadata = hstore.DictionaryField(_('metadata'), blank=True)
 
