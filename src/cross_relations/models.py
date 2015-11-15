@@ -17,6 +17,9 @@ class PersonEntityRelation(models.Model):
     entity = models.ForeignKey(Entity, verbose_name=_('entity'), related_name='person_entity_entity')
     kind = models.ForeignKey(PersonEntityRelationKind, verbose_name=_('kind'))
 
+    start = models.DateField(_('start'), blank=True, null=True)
+    end = models.DateField(_('end'), blank=True, null=True)
+
     metadata = hstore.DictionaryField(blank=True)
 
     class Meta:
@@ -36,6 +39,9 @@ class PersonOrganizationRelation(models.Model):
                                      verbose_name=_('organization'), related_name='person_organization_organization')
     kind = models.ForeignKey(PersonOrganizationRelationKind, verbose_name=_('kind'))
 
+    start = models.DateField(_('start'), blank=True, null=True)
+    end = models.DateField(_('end'), blank=True, null=True)
+
     metadata = hstore.DictionaryField(blank=True)
 
     def __str__(self):
@@ -54,6 +60,9 @@ class EntityOrganizationRelation(models.Model):
     organization = models.ForeignKey(Organization,
                                      verbose_name=_('organization'), related_name='entity_organization_organization')
     kind = models.ForeignKey(EntityOrganizationRelationKind, verbose_name=_('kind'))
+
+    start = models.DateField(_('start'), blank=True, null=True)
+    end = models.DateField(_('end'), blank=True, null=True)
 
     metadata = hstore.DictionaryField(blank=True)
 

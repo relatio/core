@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django_hstore import hstore
+from phonenumber_field.modelfields import PhoneNumberField
 
 from generics.abstract_models import DirectedRelationKind, GenericKind
 
@@ -25,6 +26,21 @@ class Entity(models.Model):
 
     build = models.DateField(_('build'), blank=True, null=True)
     cease = models.DateField(_('cease'), blank=True, null=True)
+
+    id_card_number = models.CharField(_('id card number'), blank=True, max_length=1000)
+    social_security_number = models.CharField(_('social security number'), blank=True, max_length=1000)
+
+    email = models.EmailField(_('email 1'), blank=True)
+
+    phone = PhoneNumberField(_('phone 1'), blank=True)
+
+    address = models.CharField(_('address'), blank=True, max_length=1000)
+
+    facebook = models.CharField(_('facebook'), blank=True, max_length=1000)
+    twitter = models.CharField(_('twitter'), blank=True, max_length=1000)
+    instagram = models.CharField(_('instagram'), blank=True, max_length=1000)
+
+    webpage = models.CharField(_('webpage'), blank=True, max_length=1000)
 
     metadata = hstore.DictionaryField(_('metadata'), blank=True)
 
@@ -58,6 +74,9 @@ class EntityRelation(models.Model):
     entity = models.ForeignKey(Entity, verbose_name=_('entity'), related_name='entity_entity')
     relation = models.ForeignKey(Entity, verbose_name=_('relation'), related_name='entity_related_entity')
     kind = models.ForeignKey(EntityRelationKind, verbose_name=_('kind'))
+
+    start = models.DateField(_('start'), blank=True, null=True)
+    end = models.DateField(_('end'), blank=True, null=True)
 
     metadata = hstore.DictionaryField(_('metadata'), blank=True)
 
