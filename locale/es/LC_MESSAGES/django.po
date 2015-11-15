@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -21,166 +20,166 @@ msgstr ""
 #: cross_relations/models.py:16 cross_relations/models.py:34
 #: person/models.py:65
 msgid "person"
-msgstr ""
+msgstr "persona"
 
 #: cross_relations/models.py:17 cross_relations/models.py:53
 #: entity/models.py:58
 msgid "entity"
-msgstr ""
+msgstr "entidad"
 
 #: cross_relations/models.py:18 cross_relations/models.py:37
 #: cross_relations/models.py:56 entity/models.py:20 entity/models.py:60
 #: generics/abstract_models.py:6 generics/abstract_models.py:16
 #: organization/models.py:20 organization/models.py:54 person/models.py:67
 msgid "kind"
-msgstr ""
+msgstr "tipo"
 
 #: cross_relations/models.py:23
 msgid "Person Entity Relation"
-msgstr ""
+msgstr "Relación Persona Entidad"
 
 #: cross_relations/models.py:36 cross_relations/models.py:55
 #: organization/models.py:51
 msgid "organization"
-msgstr ""
+msgstr "organización"
 
 #: cross_relations/models.py:45
 msgid "Person Organization Relation"
-msgstr ""
+msgstr "Relación Persona Entidad"
 
 #: cross_relations/models.py:61
 msgid "Entity Organization Relation"
-msgstr ""
+msgstr "Relación Entidad Organización"
 
 #: entity/models.py:11
 msgid "Entity Kind"
-msgstr ""
+msgstr "Tipo de Entidad"
 
 #: entity/models.py:15 organization/models.py:16 person/models.py:12
 msgid "public name"
-msgstr ""
+msgstr "nombre público"
 
 #: entity/models.py:17
 msgid "official name"
-msgstr ""
+msgstr "nombre jurídico"
 
 #: entity/models.py:18
 msgid "official id"
-msgstr ""
+msgstr "identificación oficial"
 
 #: entity/models.py:22 organization/models.py:18 person/models.py:16
 msgid "description"
-msgstr ""
+msgstr "descripción"
 
 #: entity/models.py:24 organization/models.py:22 person/models.py:18
 msgid "image"
-msgstr ""
+msgstr "imagen"
 
 #: entity/models.py:26 organization/models.py:24
 msgid "build"
-msgstr ""
+msgstr "constituido"
 
 #: entity/models.py:27 organization/models.py:25
 msgid "cease"
-msgstr ""
+msgstr "cerrado"
 
 #: entity/models.py:29 entity/models.py:62 organization/models.py:27
 #: person/models.py:23 person/models.py:69
 msgid "metadata"
-msgstr ""
+msgstr "metadatos"
 
 #: entity/models.py:35
 msgid "entity relation"
-msgstr ""
+msgstr "relación entidad"
 
 #: entity/models.py:41
 msgid "entity organization relation"
-msgstr ""
+msgstr "relación entidad organización"
 
 #: entity/models.py:45
 msgid "Entity"
-msgstr ""
+msgstr "Entidad"
 
 #: entity/models.py:54
 msgid "Entity Relation Kind"
-msgstr ""
+msgstr "Tipo Relación Entidad"
 
 #: entity/models.py:59 organization/models.py:53 person/models.py:66
 msgid "relation"
-msgstr ""
+msgstr "relación"
 
 #: entity/models.py:65
 msgid "Entity Relation"
-msgstr ""
+msgstr "Relación Entidad"
 
 #: generics/abstract_models.py:17
 msgid "back"
-msgstr ""
+msgstr "Volver"
 
 #: organization/models.py:11 organization/models.py:59
 msgid "Organization Kind"
-msgstr ""
+msgstr "Tipo de Entidad"
 
 #: organization/models.py:33
 msgid "organization relation"
-msgstr ""
+msgstr "relación organización"
 
 #: organization/models.py:37
 msgid "Organization"
-msgstr ""
+msgstr "Organización"
 
 #: organization/models.py:46
 msgid "Organization Relation Kind"
-msgstr ""
+msgstr "Tipo Relación Organización"
 
 #: person/models.py:9
 msgid "first name"
-msgstr ""
+msgstr "nombre"
 
 #: person/models.py:10
 msgid "last name"
-msgstr ""
+msgstr "apellidos"
 
 #: person/models.py:14
 msgid "position"
-msgstr ""
+msgstr "cargo"
 
 #: person/models.py:20
 msgid "born"
-msgstr ""
+msgstr "nacido"
 
 #: person/models.py:21
 msgid "died"
-msgstr ""
+msgstr "muerto"
 
 #: person/models.py:29
 msgid "personal relation"
-msgstr ""
+msgstr "relación personal"
 
 #: person/models.py:35
 msgid "personal entity relation"
-msgstr ""
+msgstr "relación persona entidad"
 
 #: person/models.py:41
 msgid "personal organization relation"
-msgstr ""
+msgstr "relación persona organización"
 
 #: person/models.py:52
 msgid "Person"
-msgstr ""
+msgstr "Persona"
 
 #: person/models.py:61
 msgid "Person Relation Kind"
-msgstr ""
+msgstr "Tipo de Relación Personal"
 
 #: person/models.py:72
 msgid "Person Relation"
-msgstr ""
+msgstr "Relación Personal"
 
 #: templates/admin/base_site.html:4
 msgid "Django site admin"
-msgstr ""
+msgstr "Django sitio de administración"
 
 #: templates/admin/base_site.html:15
 msgid "Django administration"
-msgstr ""
+msgstr "Administración de Django"
